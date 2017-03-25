@@ -22,7 +22,9 @@ BEFORE USING:
 You will need to install the following packages to use this code.
 
 >install.packages(‘mixer’)
+
 >install.packages(‘ttutils’)
+
 >install.packages(‘phyclust’)
 
 ________________
@@ -62,6 +64,7 @@ We will use the function GenerateNetsFromModels.R to create a synthetic example 
 
 Step 1: Generate the synthetic multilayer network. You can see that each entry of MLNet is a binary adjacency matrix.
 >source(‘GenerateNetsFromModels.R’)
+
 >MLNet=GenerateNetsFromModels(matrix(c(0.6,0.3,0.76),ncol=1),100,4,20,10)
 
 Step2: Fit sMLSBM. In the inputs, we are specifying max 4 communities and 3 strata.
