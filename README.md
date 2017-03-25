@@ -37,8 +37,7 @@ The inputs to this function are:
 
 	-MLNet: This is an L-length list where the i-th entry gives the NxN adjacency matrix for layer i. 
 
-	The objective in running the code is partitioning these adjacency 	
-	matrices into strata (clusters). 
+	The objective in running the code is partitioning these adjacency matrices into strata (clusters). 
 
 	-MaxK: The maximum number of communities that you expect in any of the layers. 
 
@@ -46,8 +45,7 @@ The inputs to this function are:
 
 	-S: The number of strata (i.e. clusters of layers to find). 
 
-	For example S=3 means that
-	we expect the layers have been generated from 3 different stochastic block models. 
+	For example S=3 means that we expect the layers have been generated from 3 different stochastic block models. 
 
 The outputs of the function are a list object with 3 entries.
 
@@ -63,12 +61,14 @@ Example:
 We will use the function GenerateNetsFromModels.R to create a synthetic example with 3 strata. Each stratum is generated from one of 3 stochastic block models.  
 
 Step 1: Generate the synthetic multilayer network. You can see that each entry of MLNet is a binary adjacency matrix.
+
 >source(‘GenerateNetsFromModels.R’)
 
 >MLNet=GenerateNetsFromModels(matrix(c(0.6,0.3,0.76),ncol=1),100,4,20,10)
 
 Step2: Fit sMLSBM. In the inputs, we are specifying max 4 communities and 3 strata.
 >source(‘Fit.sMLSBM.R’)
+
 >Fit=Fit.sMLSBM(MLNet,4,3) 
 
 Step 3: Check out the output
