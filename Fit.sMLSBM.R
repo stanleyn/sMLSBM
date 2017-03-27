@@ -368,4 +368,17 @@ newTau[Isovert,]<-0
 }
 newTau
 }
+
+MultiLayerInit<-function(MultiLayerNetwork,n){
+    
+    
+    NumLayer<-length(MultiLayerNetwork)
+    #Create super adjacency matrix
+    SuperAdjacency=matrix(0,n,n)
+    for(l in 1:NumLayer){
+        Mat=MultiLayerNetwork[[l]]
+        SuperAdjacency=SuperAdjacency+Mat
+    }
+    SuperAdjacency
+}
 ###############################################################################
