@@ -74,7 +74,7 @@ LayerFitsFixTheta<-list()
  		PullLayer<-MLNet[IndLayer]
  		#determine a k
  		RandNum<-sample(1:length(PullLayer),1)
- 		MixerFit<-mixer(PullLayer[[RandNum]],qmin=2,qmax=10)
+ 		MixerFit<-mixer(PullLayer[[RandNum]],qmin=2,qmax=MaxK)
  		GetModelMixerFit<-getModel(MixerFit)
  		k=nrow(GetModelMixerFit$Pis)
  		FitMLSBM<-SBM.Variational.Fix.Both(PullLayer,n,k,length(PullLayer))
