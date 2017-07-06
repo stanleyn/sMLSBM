@@ -44,7 +44,7 @@ NNPiList<-list()
 	}
 
 	#Cluster these ininital layers
-	StrataAssn<-ClSBM(NNPiList,S)
+	NewStrataAssn<-ClSBM(NNPiList,S)
 	
 	print('done intializing!')
 
@@ -56,6 +56,9 @@ StoreInferComm<-list()
 
 
 while(RandInd<.99){
+
+#Update Strata Assn
+StrataAssn<-NewStrataAssn
 
 #Store final strata tau and comm memberships
 FinalTheta<-list()
@@ -146,8 +149,6 @@ for(kk in 1:nrow(UniqueRowPatterns)){
 #Compute rand index between new strata assignments and old assignments
 RandInd<-RRand(NewStrataAssn,StrataAssn)$Rand
 
-#Update Strata Assn
-StrataAssn<-NewStrataAssn
 
 } #while
 Out<-vector(mode='list',length=3)
